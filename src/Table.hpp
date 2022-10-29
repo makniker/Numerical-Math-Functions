@@ -16,8 +16,6 @@ namespace nmath
     num_t step_;
   };
 
-
-
   template <typename T>
   void tableFormer(Table &t)
   {

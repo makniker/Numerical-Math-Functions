@@ -1,27 +1,27 @@
-#include <map>
-#include <functional>
 #include <iostream>
 
 #include "Commands.hpp"
 
 int main()
 {
-  using lab = std::function< void(std::ostream&, std::istream&)>;
-  std::map< std::string, lab> labsDict
+  nmath::LabDict labsDict
   {
-	  {"lab2", nmath::lab2}
+    {"2", nmath::lab2}
   };
-  try
+  while (std::cin.good())
   {
-	  std::string commandName;
-	  while (std::cin >> commandName)
-	  {
-		  labsDict.at(commandName)(std::cout, std::cin);
-	  }
-  }
-  catch (...)
-  {
-	  std::cerr << "wrong name";
+    try
+    {
+      nmath::printLabsList(std::cout, labsDict);
+      std::cout << "Enter lab number:\n";
+      std::string commandName;
+      std::cin >> commandName;
+      labsDict.at(commandName)(std::cout, std::cin);
+    }
+    catch (...)
+    {
+      std::cout << "wrong name\n";
+    }
   }
   return 0;
 }
