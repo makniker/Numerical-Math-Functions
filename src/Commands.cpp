@@ -4,10 +4,10 @@
 #include <istream>
 #include <iomanip>
 
-#include "LAGR.hpp"
-#include "Neuton.hpp"
-#include "Table.hpp"
-#include "Functors.hpp"
+#include "lab2/LAGR.hpp"
+#include "lab2/Neuton.hpp"
+#include "lab2/Table.hpp"
+#include "lab2/Functors.hpp"
 
 std::ostream &nmath::printLabsList(std::ostream &out, const LabDict &dict)
 {
